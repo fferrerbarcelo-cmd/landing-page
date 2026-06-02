@@ -1,0 +1,40 @@
+:root {
+  --color-fondo: #f5f5f5;
+  --color-titulo: #333333;
+  --color-texto: #555555;
+  --color-boton: #4CAF50;
+  --color-boton-hover: #45a049;
+}
+
+body {
+  font-family: system-ui, Arial, sans-serif;
+  background-color: var(--color-fondo);
+  margin: 0;
+  padding: 20px;
+  max-width: 800px;
+}
+
+h1 {
+  color: var(--color-titulo);
+  font-size: 36px;
+  text-align: center;
+}
+
+p {
+  color: var(--color-texto);
+  font-size: 18px;
+  margin: 20px 0;
+  padding: 0 10px;
+}
+
+a {
+  background-color: var(--color-boton);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+a:hover {
+  background-color: var(--color-boton-hover);
+}

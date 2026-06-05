@@ -2,12 +2,317 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8">
-    <title> Landing page Nike air Max Style</title>
+    <title>Landing page Nike Air Max Style</title>
     <link rel="icon" href="favicon.ico">
-    <link rel= "stylesheet" href= "css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        color: #222;
+      }
+
+      /* HEADER */
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 32px;
+        background-color: #111;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      header img {
+        height: 48px;
+      }
+
+      header input[type="text"] {
+        flex: 1;
+        max-width: 400px;
+        padding: 10px 16px;
+        border: none;
+        border-radius: 4px;
+        font-size: 14px;
+      }
+
+      header nav ul {
+        list-style: none;
+        display: flex;
+        gap: 24px;
+      }
+
+      header nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      header nav ul li a:hover {
+        color: #f5a623;
+      }
+
+      /* MAIN */
+      main {
+        max-width: 1100px;
+        margin: 32px auto;
+        padding: 0 24px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+
+      /* SECCIÓN IMAGEN / NOMBRE */
+      main section:first-child {
+        grid-column: 1;
+        background: #fff;
+        border-radius: 8px;
+        padding: 24px;
+        text-align: center;
+      }
+
+      main section:first-child h1 {
+        font-size: 22px;
+        margin-bottom: 8px;
+      }
+
+      main section:first-child p {
+        color: #555;
+        margin-bottom: 16px;
+      }
+
+      main section:first-child figure img {
+        width: 100%;
+        max-width: 360px;
+        border-radius: 8px;
+      }
+
+      main section:first-child figcaption {
+        font-size: 12px;
+        color: #888;
+        margin-top: 8px;
+      }
+
+      /* SECCIÓN PRECIOS */
+      main section:nth-child(2) {
+        grid-column: 2;
+        background: #fff;
+        border-radius: 8px;
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      main section:nth-child(2) p del {
+        color: #999;
+        font-size: 16px;
+      }
+
+      main section:nth-child(2) p:nth-child(2) {
+        color: #e53935;
+        font-weight: bold;
+        font-size: 15px;
+      }
+
+      main section:nth-child(2) p:nth-child(3) strong {
+        font-size: 28px;
+        color: #111;
+      }
+
+      main section:nth-child(2) p:nth-child(4),
+      main section:nth-child(2) p:nth-child(5) {
+        color: #555;
+        font-size: 14px;
+      }
+
+      /* SECCIÓN FICHA TÉCNICA */
+      main section:nth-child(3) {
+        grid-column: 1 / -1;
+        background: #fff;
+        border-radius: 8px;
+        padding: 24px;
+      }
+
+      main section:nth-child(3) details summary {
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 16px;
+        margin-bottom: 12px;
+      }
+
+      main section:nth-child(3) ul {
+        padding-left: 20px;
+        line-height: 2;
+        color: #444;
+      }
+
+      main section:nth-child(3) p {
+        margin-top: 16px;
+        color: #555;
+      }
+
+      /* SECCIÓN OPINIONES */
+      main section:nth-child(4) {
+        grid-column: 1 / -1;
+        background: #fff;
+        border-radius: 8px;
+        padding: 24px;
+      }
+
+      main section:nth-child(4) h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+
+      main section:nth-child(4) article {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 16px 0;
+        border-bottom: 1px solid #eee;
+      }
+
+      main section:nth-child(4) article:last-child {
+        border-bottom: none;
+      }
+
+      main section:nth-child(4) article img {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      main section:nth-child(4) article h3 {
+        font-size: 15px;
+        margin-bottom: 4px;
+      }
+
+      main section:nth-child(4) article time {
+        font-size: 12px;
+        color: #999;
+        display: block;
+        margin-bottom: 6px;
+      }
+
+      main section:nth-child(4) article p {
+        font-size: 14px;
+        color: #444;
+      }
+
+      /* ASIDE - PRODUCTOS RELACIONADOS */
+      aside {
+        grid-column: 1 / -1;
+        background: #fff;
+        border-radius: 8px;
+        padding: 24px;
+      }
+
+      aside h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+
+      aside {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .aside-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 20px;
+      }
+
+      aside article {
+        border: 1px solid #eee;
+        border-radius: 8px;
+        padding: 16px;
+        text-align: center;
+      }
+
+      aside article img {
+        width: 100%;
+        max-width: 140px;
+        border-radius: 6px;
+        margin-bottom: 10px;
+      }
+
+      aside article h3 {
+        font-size: 15px;
+        margin-bottom: 6px;
+      }
+
+      aside article p {
+        font-size: 15px;
+        margin-bottom: 10px;
+        color: #111;
+      }
+
+      aside article a {
+        display: inline-block;
+        padding: 8px 16px;
+        background: #111;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 4px;
+        font-size: 13px;
+      }
+
+      aside article a:hover {
+        background: #f5a623;
+        color: #111;
+      }
+
+      /* FOOTER */
+      footer {
+        background: #111;
+        color: #ccc;
+        padding: 32px;
+        text-align: center;
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+      }
+
+      footer ul {
+        list-style: none;
+        display: flex;
+        gap: 24px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      footer ul li a {
+        color: #aaa;
+        text-decoration: none;
+        font-size: 13px;
+      }
+
+      footer ul li a:hover {
+        color: #f5a623;
+      }
+
+      footer p {
+        font-size: 13px;
+        color: #888;
+      }
+    </style>
   </head>
   <body>
-
     <header>
       <img src="logo.png" alt="Logo de la tienda">
       <input type="text" placeholder="Buscar productos...">
@@ -21,7 +326,6 @@
     </header>
 
     <main>
-
       <section>
         <h1>Zapatillas Nike Air Max 270</h1>
         <p>Estado: <strong>Nuevo</strong></p>
@@ -56,34 +360,39 @@
         <h2>Opiniones de los usuarios</h2>
         <article>
           <img src="usuario1.jpg" alt="Foto de perfil de María">
-          <h3>María González</h3>
-          <time datetime="2024-03-15">15 de marzo de 2024</time>
-          <p>Excelente calidad, muy cómodas desde el primer uso.</p>
+          <div>
+            <h3>María González</h3>
+            <time datetime="2024-03-15">15 de marzo de 2024</time>
+            <p>Excelente calidad, muy cómodas desde el primer uso.</p>
+          </div>
         </article>
         <article>
           <img src="usuario2.jpg" alt="Foto de perfil de Carlos">
-          <h3>Carlos Pérez</h3>
-          <time datetime="2024-03-10">10 de marzo de 2024</time>
-          <p>Llegaron rápido y el producto es igual a las fotos.</p>
+          <div>
+            <h3>Carlos Pérez</h3>
+            <time datetime="2024-03-10">10 de marzo de 2024</time>
+            <p>Llegaron rápido y el producto es igual a las fotos.</p>
+          </div>
         </article>
       </section>
 
       <aside>
         <h2>Productos relacionados</h2>
-        <article>
-          <img src="producto2.jpg" alt="Nike Air Force 1">
-          <h3>Nike Air Force 1</h3>
-          <p><strong>$95.000</strong></p>
-          <a href="#">Ver producto</a>
-        </article>
-        <article>
-          <img src="producto3.jpg" alt="Adidas Superstar">
-          <h3>Adidas Superstar</h3>
-          <p><strong>$89.000</strong></p>
-          <a href="#">Ver producto</a>
-        </article>
+        <div class="aside-grid">
+          <article>
+            <img src="producto2.jpg" alt="Nike Air Force 1">
+            <h3>Nike Air Force 1</h3>
+            <p><strong>$95.000</strong></p>
+            <a href="#">Ver producto</a>
+          </article>
+          <article>
+            <img src="producto3.jpg" alt="Adidas Superstar">
+            <h3>Adidas Superstar</h3>
+            <p><strong>$89.000</strong></p>
+            <a href="#">Ver producto</a>
+          </article>
+        </div>
       </aside>
-
     </main>
 
     <footer>
@@ -96,6 +405,5 @@
       <p>Medios de pago: Visa, Mastercard, Mercado Pago</p>
       <p>Garantía: 6 meses por defectos de fábrica</p>
     </footer>
-
   </body>
-<img src="https://www.moov.com.ar/on/demandware.static/-/Sites-365-dabra-catalog/default/dweb1a044a/products/NI_AH8050-002/NI_AH8050-002-1.JPG" alt="Zapatilla Nike Air Max 270 color negro">s
+</html>
